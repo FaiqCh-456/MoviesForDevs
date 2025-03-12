@@ -14,7 +14,7 @@ const Navbar = ({
   title = '<MoviesForDevs/>',
   titleColor = 'text-blue-400',
   logoHref = '/',
-  githubUrl = 'https://github.com/tu-usuario/tu-repositorio'
+  githubUrl = 'https://github.com/gothsec/MoviesForDevs'
 }: NavbarProps) => {
   return (
     <nav className={`flex items-center justify-between sticky top-0 z-50 px-4 sm:px-8 md:px-16 lg:px-24 py-4 bg-[#0D1117]/95 backdrop-blur-lg`}>

@@ -1,5 +1,3 @@
-// movieData.ts
-
 export interface Movie {
   id: string;
   title: string;
@@ -91,16 +89,13 @@ export const generateTagsFromMovie = (movieDetail: MovieApiResponse): string[] =
   const genres = movieDetail.Genre?.split(', ') || [];
   const tags = new Set<string>();
 
-  // Tags por género
   if (genres.includes('Sci-Fi')) tags.add('Sci-Fi');
   if (genres.includes('Documentary')) tags.add('Tech');
 
-  // Tags por contenido técnico
   techKeywords.forEach(({word, category}) => {
     if (plot.includes(word.toLowerCase())) tags.add(category);
   });
 
-  // Tags especiales para películas específicas
   switch (movieDetail.imdbID) {
     case 'tt0133093': // The Matrix
       tags.add('VirtualReality').add('Tech');
