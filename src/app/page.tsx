@@ -1,8 +1,13 @@
+import Navbar from "@/components/navbar";
+import Hero from "@/components/hero";
+import Main from "@/components/main";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to CineCommit</h1>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Main />
+    </>
   );
 }
