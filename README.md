@@ -1,2 +1,40 @@
 # MoviesForDevs
 ![image](https://github.com/user-attachments/assets/9d774555-6bc7-48e6-b13e-af1fbb45a756)
+![Deploy Status](https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel)
+
+---
+
+## **Stack**  
+![Next](https://img.shields.io/badge/Next-171717?logo=next.js&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+
+## **Project structure**
+```
+public/
+└── favicon.png
+src/
+├── app/
+|    ├── globals.css
+|    ├── layout.tsx
+|    └── page.tsx
+└── components/
+     ├── hero.tsx
+     ├── main.tsx
+     ├── movieData.ts
+     └── navbar.tsx
+```
+
+## **Local configuration** 
+1. Clone the repo:  
+```
+git clone https://github.com/gothsec/portfolio
+```
+2. Install dependencies:
+```  
+npm install
+```
+3. Start the develpoment server:
+```  
+npm run dev
+```
