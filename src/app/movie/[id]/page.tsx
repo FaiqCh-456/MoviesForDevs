@@ -35,7 +35,7 @@ const MovieDetail = () => {
         // Fetch movie details from OMDB API
         const response = await fetch(
           `https://www.omdbapi.com/?i=${id}&apikey=${
-            process.env.NEXT_OMDB_API_KEY || "your_api_key"
+            process.env.NEXT_PUBLIC_OMDB_API_KEY || "your_api_key"
           }`
         );
 
@@ -56,7 +56,7 @@ const MovieDetail = () => {
         setLoading(false);
 
         // Fetch YouTube trailer using YouTube API
-        const apiKey = process.env.NEXT_YOUTUBE_API_KEY;
+        const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
         if (!apiKey) {
           throw new Error("YouTube API key not configured");
         }
