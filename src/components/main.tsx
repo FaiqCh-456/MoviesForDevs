@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 import { MovieApiResponse } from './movieData';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Movie, techMovieIds, filterCategories, processMovieResponse } from './movieData';
 
 const Main = () => {
@@ -52,8 +53,9 @@ const Main = () => {
   }, [movies, filter, sortBy]);
 
   const MovieCard = useCallback(({ movie }: { movie: Movie }) => (
-    <div className="bg-[#1A1F2A] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 group">
-      <div className="relative aspect-[2/3] bg-gray-800">
+    <Link href={`/movie/${movie.id}`} className="block" >
+      <div className="bg-[#1A1F2A] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 group">
+        <div className="relative aspect-[2/3] bg-gray-800">
         {movie.poster !== '/placeholder-poster.jpg' ? (
           <Image
             src={movie.poster}
@@ -90,7 +92,8 @@ const Main = () => {
         </div>
         <p className="text-sm text-gray-400 mt-3 line-clamp-2">{movie.plot}</p>
       </div>
-    </div>
+      </div>
+    </Link>
   ), []);
 
   return (
