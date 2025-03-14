@@ -125,6 +125,6 @@ export const processMovieResponse = (movieDetail: MovieApiResponse): Movie | nul
     tags: generateTagsFromMovie(movieDetail),
     plot: movieDetail.Plot || '',
     director: movieDetail.Director || '',
-    genre: movieDetail.Genre?.split(', ') || []
+    genre: movieDetail.Genre?.split(', ') || [],
   };
 };
