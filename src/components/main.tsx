@@ -16,7 +16,7 @@ const Main = () => {
 
   const fetchMovies = useCallback(async () => {
     try {
-      const apiKey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
+      const apiKey = process.env.NEXT_OMDB_API_KEY;
       if (!apiKey) throw new Error("API key missing");
 
       const uniqueIds = [...new Set(techMovieIds)].filter(id => /^tt\d{7,8}$/.test(id));
