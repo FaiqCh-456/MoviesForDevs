@@ -49,6 +49,12 @@ export const techMovieIds = [
   'tt2177843', // We are Legion
   'tt0168122', // Pirates of Silicon Valley
   'tt11464826', // The social dilemma
+  'tt2821314', // The rise and rise of bitcoin
+  'tt10837476', // Inside Bill's Brain
+  'tt5275828', // Lo and Behold
+  'tt2084953', // Terms and Conditions May Apply
+  'tt4044364', // Citizenfour
+  'tt3042408', // Who am I
 ] as const;
 
 export const techKeywords = [
