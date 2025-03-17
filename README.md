@@ -15,6 +15,9 @@ public/
 └── favicon.png
 src/
 ├── app/
+|    ├── movie/
+|    |    └── [id]/
+|    |         └── page.tsx
 |    ├── globals.css
 |    ├── layout.tsx
 |    └── page.tsx
