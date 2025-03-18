@@ -102,7 +102,7 @@ const MovieDetail = () => {
     return (
       <div className="min-h-screen bg-[#0D1117] text-white">
         <Navbar />
-        <div className="container mx-auto px-4 py-20 flex items-center justify-center">
+        <div className="container mx-auto px-4 py-10 flex items-center justify-center">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
         </div>
       </div>
@@ -113,12 +113,12 @@ const MovieDetail = () => {
     return (
       <div className="min-h-screen bg-[#0D1117] text-white">
         <Navbar />
-        <div className="container mx-auto px-4 py-20 text-center">
+        <div className="container mx-auto px-4 py-10 text-center">
           <h1 className="text-3xl font-bold text-red-500 mb-4">Error</h1>
           <p className="text-gray-400">{error || "Movie not found"}</p>
           <Link
             href="/"
-            className="inline-block mt-8 px-6 py-3 bg-[#3B82F6] text-white rounded-md hover:bg-blue-700 transition"
+            className="inline-block mt-6 px-6 py-3 bg-[#3B82F6] text-white rounded-md hover:bg-blue-700 transition"
           >
             Back to Home
           </Link>
@@ -130,22 +130,22 @@ const MovieDetail = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-[#0D1117] text-white px-4 sm:px-8 md:px-16 lg:px-24">
-        <div className="container mx-auto h-full flex items-end py-6">
-          <div className="flex flex-col md:flex-row items-start gap-8">
+      <div className="min-h-screen bg-[#0D1117] text-white px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="container mx-auto pt-6 pb-4">
+          <div className="flex flex-col md:flex-row items-start gap-6">
             <Image
               src={movie.poster}
               alt={movie.title}
-              width={192}
-              height={288}
+              width={180}
+              height={270}
               className="object-cover rounded-md shadow-lg"
             />
-            <div>
-              <h1 className="text-4xl font-bold mb-2">
+            <div className="flex-1">
+              <h1 className="text-3xl font-bold mb-2">
                 {movie.title}{" "}
-                <span className="text-gray-400 text-3xl">({movie.year})</span>
+                <span className="text-gray-400 text-2xl">({movie.year})</span>
               </h1>
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
                 <div className="flex items-center gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -157,12 +157,13 @@ const MovieDetail = () => {
                   </svg>
                   <span className="font-bold">{movie.imdbRating}/10</span>
                 </div>
-                <div className="text-gray-400">|</div>
+                <div className="text-gray-400 hidden md:block">|</div>
                 <div className="text-gray-300">{movie.genre.join(", ")}</div>
-                <div className="text-gray-400">|</div>
+                <div className="text-gray-400 hidden md:block">|</div>
                 <div className="text-gray-300">Director: {movie.director}</div>
               </div>
-              <div className="flex flex-wrap gap-2 mt-2">
+              
+              <div className="flex flex-wrap gap-2 mb-4">
                 {movie.tags.map((tag) => (
                   <span
                     key={tag}
@@ -172,30 +173,31 @@ const MovieDetail = () => {
                   </span>
                 ))}
               </div>
+              
+              <div className="lg:block mb-4">
+                <h2 className="text-xl font-bold mb-2 border-b border-gray-800 pb-1">
+                  Overview
+                </h2>
+                <p className="text-gray-300 leading-relaxed">{movie.plot}</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Movie Content Section */}
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Movie Details */}
+        <div className="container mx-auto px-1 py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold mb-4 border-b border-gray-800 pb-2">
-                Overview
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-8">{movie.plot}</p>
 
-              <h2 className="text-2xl font-bold mb-4 border-b border-gray-800 pb-2">
+              <h2 className="text-xl font-bold mb-3 border-b border-gray-800 pb-1">
                 Trailer
               </h2>
-              <div className="aspect-w-16 aspect-h-9 mb-8">
+              <div className="aspect-w-16 aspect-h-9 mb-6">
                 {trailer.loading ? (
-                  <div className="bg-gray-800 w-full h-[400px] rounded-lg flex items-center justify-center">
+                  <div className="bg-gray-800 w-full h-[350px] rounded-lg flex items-center justify-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
                   </div>
                 ) : trailer.error ? (
-                  <div className="bg-gray-800 w-full h-[400px] rounded-lg flex flex-col items-center justify-center">
+                  <div className="bg-gray-800 w-full h-[350px] rounded-lg flex flex-col items-center justify-center">
                     <p className="text-red-500 mb-4">{trailer.error}</p>
                     <a
                       href={`https://www.youtube.com/results?search_query=${encodeURIComponent(
@@ -215,36 +217,35 @@ const MovieDetail = () => {
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="w-full h-[400px] rounded-lg"
+                    className="w-full h-[350px] rounded-lg"
                   ></iframe>
                 ) : (
-                  <div className="bg-gray-800 w-full h-[400px] rounded-lg flex items-center justify-center">
+                  <div className="bg-gray-800 w-full h-[350px] rounded-lg flex items-center justify-center">
                     <p className="text-gray-400">Trailer not available</p>
                   </div>
                 )}
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-[#1F2937] rounded-lg p-6">
-                <h3 className="text-xl font-bold mb-4">Watch Now</h3>
+              <div className="bg-[#1F2937] rounded-lg p-4">
+                <h3 className="text-lg font-bold mb-3">Watch Now</h3>
                 <a
                   href={`https://www.justwatch.com/us/search?q=${encodeURIComponent(
                     movie.title
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-[#3B82F6] text-white py-3 px-4 rounded-md text-center block hover:bg-blue-700 transition mb-4"
+                  className="w-full text-white py-2 px-4 rounded-lg text-center block border mb-4"
                 >
                   Find Where to Watch
                 </a>
 
-                <div className="mt-8">
-                  <h3 className="text-xl font-bold mb-4">
+                <div className="mt-4">
+                  <h3 className="text-lg font-bold mb-3">
                     Why Developers Love It
                   </h3>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
+                  <ul className="list-disc pl-5 text-gray-300 space-y-1">
                     {movie.tags.includes("AI") && (
                       <li>
                         Explores artificial intelligence concepts and
