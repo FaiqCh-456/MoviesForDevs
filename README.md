@@ -22,6 +22,7 @@ src/
 |    ├── layout.tsx
 |    └── page.tsx
 └── components/
+     ├── footer.tsx
      ├── hero.tsx
      ├── main.tsx
      ├── movieData.ts
