@@ -42,3 +42,5 @@ npm install
 ```  
 npm run dev
 ```
+---
+You can contribute if you want :)
