@@ -55,6 +55,7 @@ export const techMovieIds = [
   'tt2084953', // Terms and Conditions May Apply
   'tt4044364', // Citizenfour
   'tt3042408', // Who am I
+  'tt1104001', // Tron: legacy
 ] as const;
 
 export const techKeywords = [
