@@ -6,6 +6,7 @@ import { MovieApiResponse } from './movieData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Movie, techMovieIds, filterCategories, processMovieResponse } from './movieData';
+import { motion } from "motion/react";
 
 const Main = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -97,7 +98,13 @@ const Main = () => {
   ), []);
 
   return (
-    <main className="min-h-screen bg-[#0D1117] text-white px-4 sm:px-8 md:px-16 lg:px-24">
+    <motion.main 
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, delay: 0.7 }}
+    viewport={{ once: true }}
+    
+    className="min-h-screen bg-[#0D1117] text-white px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="bg-[#0D1117]/95 backdrop-blur-lg py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="flex gap-2 overflow-x-auto pb-2 w-full sm:w-auto scrollbar-hide">
           {filterCategories.map(category => (
@@ -144,7 +151,7 @@ const Main = () => {
           )}
         </>
       )}
-    </main>
+    </motion.main>
   );
 };
 

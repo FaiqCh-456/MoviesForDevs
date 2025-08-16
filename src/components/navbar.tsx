@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { motion } from "motion/react";
 
 interface NavbarProps {
   title?: string;
@@ -17,7 +18,12 @@ const Navbar = ({
   githubUrl = 'https://github.com/gothsec/MoviesForDevs'
 }: NavbarProps) => {
   return (
-    <nav className={`flex items-center justify-between sticky top-0 z-50 px-4 sm:px-8 md:px-16 lg:px-24 py-4 bg-[#0D1117]/95 backdrop-blur-lg`}>
+    <motion.nav 
+    initial={{ opacity: 0, y: -50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.2, delay: 0.1 }}
+  viewport={{ once: true }}
+    className={`flex items-center justify-between sticky top-0 z-50 px-4 sm:px-8 md:px-16 lg:px-24 py-4 bg-[#0D1117]/95 backdrop-blur-lg`}>
       <div className="flex items-center">
         <Link href={logoHref} className={`${titleColor} text-xl sm:text-2xl font-mono font-bold hover:text-blue-300 transition-colors`}>
           {title}
@@ -39,7 +45,7 @@ const Navbar = ({
         </svg>
         <span className="hidden sm:inline text-sm">Contribute</span>
       </a>
-    </nav>
+    </motion.nav>
   );
 };
 
