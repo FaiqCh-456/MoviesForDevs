@@ -32,7 +32,7 @@ src/
 ## **Local configuration** 
 1. Clone the repo:  
 ```
-git clone https://github.com/gothsec/portfolio
+git clone https://github.com/FaiqCh-456/MoviesForDevs
 ```
 2. Install dependencies:
 ```  

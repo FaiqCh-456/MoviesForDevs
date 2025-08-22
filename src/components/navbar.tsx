@@ -15,7 +15,7 @@ const Navbar = ({
   title = '<MoviesForDevs/>',
   titleColor = 'text-blue-400',
   logoHref = '/',
-  githubUrl = 'https://github.com/gothsec/MoviesForDevs'
+  githubUrl = 'https://github.com/FaiqCh-456/MoviesForDevs'
 }: NavbarProps) => {
   return (
     <motion.nav 
